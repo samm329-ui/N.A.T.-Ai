@@ -211,7 +211,7 @@ def __init__(self, vector_store_service: VectorStoreService):
 
             # Prompt template: system message, chat history placeholder, current question,
             prompt = ChatPromptTemplate.from_messages([
-                *("system", system_message),
+                ("system", system_message),
                 MessagesPlaceholder(variable_name="history"),
                 ("human", "{question}"),
             ])
